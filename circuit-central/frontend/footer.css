@@ -1,0 +1,83 @@
+.footer {
+    background: black;
+    padding: 40px 0;
+    font-family: Arial, sans-serif;
+  }
+  .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .footer-section {
+    flex: 1;
+    min-width: 250px;
+    margin: 10px;
+  }
+  .footer-section h2,
+  .footer-section h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  .footer-section p {
+    font-size: 14px;
+    color: #666;
+  }
+  .footer-section ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-section ul li {
+    margin: 8px 0;
+  }
+  .footer-section ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+  .social-icons a {
+    margin: 5px;
+    color: #333;
+    font-size: 18px;
+  }
+  .app-buttons img {
+    width: 120px;
+    margin: 5px;
+  }
+  .payment-icons img {
+    width: 50px;
+    margin: 5px;
+  }
+  .copyright {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #777;
+  }
+  .grechen-fuemen-regular {
+    font-family: "Grechen Fuemen", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
