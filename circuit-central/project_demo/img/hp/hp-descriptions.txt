@@ -1,0 +1,21 @@
+hp_laptops
+
+HP OmniBook X Laptop 14,
+Windows 11 Home, 14", Touch screen, Qualcomm® Snapdragon®, 16GB RAM, 512GB SSD, 2.2K, Meteor silver
+
+HP Spectre x360 2-in-1 Laptop 
+16" 120Hz 2.8K Touch screen
+Windows 11 Home - Intel® Core™ Ultra 7 - 16GB RAM - 1TB SSD - Space blue
+
+HP Laptop 15-fd0016ni, 
+Windows 11 Home Single Language, 15.6", Intel® Core™ i5, 16GB RAM, 512GB SSD, FHD, Natural silver
+
+hp_desktops
+
+HP Pro Tower 400 G9 PCI Desktop PC,
+ Windows 11 Pro, Intel® Core™ i7, 16GB RAM, 512GB SSD
+
+HP 6D3E1EA Pro Tower 290 G9 TWR 
+Intel Core i5-12400 4.40GHz 6-Cores 8GB (1x8GB) DDR4-3200MHz 1TB 7200RPM SATA HDD Windows 11 Pro Black Desktop PC
+
+HP Elite Small Form Factor 600 G9 Desktop PC, Windows 11 Pro, Intel® Core™ i5, 16GB RAM, 512GB SSD

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Role - Circuit Central</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #0F0F0F, #1A1A2E);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+        }
+        .modal {
+            background: rgba(30, 30, 40, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.3);
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #00FFFF;
+        }
+        .btn {
+            padding: 12px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .buyer-btn {
+            background: #00CCFF;
+            color: black;
+        }
+        .buyer-btn:hover {
+            background: #0099CC;
+        }
+        .seller-btn {
+            background: blueviolet;
+            color: black;
+        }
+        .seller-btn:hover {
+            background: lightblue;
+        }
+    </style>
+    <script>
+        function selectRole(role) {
+            if (role === 'buyer') {
+                window.location.href = 'index.php';
+            } else {
+                window.location.href = 'seller_home.html';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="modal">
+        <h2>Are you a Buyer or a Seller?</h2>
+        <button class="btn buyer-btn" onclick="selectRole('buyer')">I'm a Buyer</button>
+        <button class="btn seller-btn" onclick="selectRole('seller')">I'm a Seller</button>
+    </div>
+</body>
+</html>

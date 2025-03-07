@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade-In | Circuit Central</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        #navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active{
+    color: #088178;
+}
+
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: #088178;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 40px;
+            background-color: #f5f5f7;
+            color: #000000;
+            background-image: url('img/Cicuit.jpg'); /* Replace with your image URL */
+            background-size: cover; /* Ensures the image covers the entire page */
+            background-position: center; /* Centers the image */
+            background-attachment: fixed; /* Keeps the background fixed when scrolling */
+        }
+        body image{
+            width: 30%;
+        }
+        h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 1.8em;
+            font-weight: bold;
+            margin-top: 40px;
+        }
+        p {
+            font-size: 1.2em;
+            color: #000000;
+        }
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        .card {
+            padding: 20px;
+            height: 150px;
+            border-radius: 15px;
+            width: 230px;
+            cursor: pointer;
+            background-color: white;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .card-image {
+            width: 80px; /* Adjust size as needed */
+            height: auto;
+            display: block;
+            margin: 0 auto 10px; /* Centers the image and adds space below */
+        }
+        .popup {
+            display:none;
+            position:center;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            width: 350px;
+            text-align: left;
+        }
+        .close {
+            cursor: pointer;
+            color: #d9534f;
+            font-size: 1.5em;
+            float: right;
+        }
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #000000;
+            color: white;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #000000;
+        }
+        .headline {
+            font-size: 36px;
+            line-height: 1.2;  
+            margin-bottom: 20px;
+        }
+        .highlight {
+            display: block;
+            font-size: 50px;
+            font-weight: bold;
+        }
+        
+    </style>
+</head>
+<body>
+    <section id="header">
+        <h1 style="display: inline; margin-left: 10px;">Circuit Central</h1>
+        <div>
+            <ul id="navbar">
+                <li><a class="active" href="index.html">Home</a></li>
+                <li><a href="Shop.html">Shop</a></li>
+                <li><a href="Promos.html">Promos</a></li>
+                <li><a href="PC's & Laptops.html">PC's & Laptops</a></li>
+                <li><a href="My Account.html">My Account</a></li>
+                <li><a href="cart.html"><i class="fas fa-shopping-cart"></i></a></li>
+            </ul>
+        </div>
+    </section>
+    <img src="Images/exchange.png" alt="">
+    <h1 class="headline">Trade In & Upgrade to a High-Quality<br> Refurbished Computer!</h1>
+    <p>Turn your old device into savings!<br> Trade in your pre-owned laptop, desktop, tablet, or smartphone and get credit toward a top-quality refurbished computer at Circuit Central.</p>
+
+    <h2>Find Out How Much Your Device is Worth</h2>
+    <p>Select your product to get an estimate.<br> Final value is determined after a physical assessment.</p>
+
+    <div class="cards-container">
+        <div class="card" onclick="showPopup('laptopsPopup')">
+            <img src="img/laptop1.jpg" alt="Laptops" class="card-image">
+            Laptops
+        </div>
+        <div class="card" onclick="showPopup('desktopsPopup')">
+            <img src="img/Desktop Img.webp" alt="Desktops" class="card-image">
+            Desktops
+        </div>
+
+    <div id="laptopsPopup" class="popup">
+        <span class="close" onclick="closePopup('laptopsPopup')">&times;</span>
+        <h2>Get your estimate trade-in value in 3 simple steps</h2>
+        <p>Estimated value is inclusive of additional trade-in support</p>
+        <button onclick="showModelDropdown('laptops')">Choose your model</button>
+        <div id="modelDropdown-laptops" style="display: none;">
+            <select id="deviceModel-laptops" onchange="showConditionForm('laptops')">
+                <option value="">Select Model</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+            </select>
+            <select id="deviceModel-laptops" onchange="showConditionForm('laptops')">
+                <option value="">Select Brand</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+            </select>
+        </div>
+        <div id="conditionForm-laptops" style="display: none;">
+            <h3>What is the condition of your product's body?</h3>
+            <input type="radio" name="bodyCondition-laptops" value="100"> Looks like new<br>
+            <input type="radio" name="bodyCondition-laptops" value="85"> Lightly used<br>
+            <input type="radio" name="bodyCondition-laptops" value="60"> Scratched or dents<br>
+            <input type="radio" name="bodyCondition-laptops" value="30"> Cracked<br>
+            
+            <h3>What is the condition of your screen?</h3>
+            <input type="radio" name="screenCondition-laptops" value="0"> Looks like new<br>
+            <input type="radio" name="screenCondition-laptops" value="10"> Lightly used<br>
+            <input type="radio" name="screenCondition-laptops" value="25"> Scratched<br>
+            <input type="radio" name="screenCondition-laptops" value="50"> Cracked<br>
+            
+            <h3>Does your product turn on and function normally?</h3>
+            <input type="radio" name="functionality-laptops" value="0"> Yes<br>
+            <input type="radio" name="functionality-laptops" value="50"> No<br>
+            
+            <button onclick="calculateTradeIn('laptops')">Calculate Trade-in</button>
+            <p id="tradeInValue-laptops"></p>
+
+            <!-- OKAY button to close the form after calculation -->
+        <button id="okayButton-laptops" style="display: none;" onclick="closePopup('laptopsPopup')">OKAY</button>
+        </div>
+    </div>
+
+    <div id="desktopsPopup" class="popup">
+        <span class="close" onclick="closePopup('desktopsPopup')">&times;</span>
+        <h2>Get your estimate trade-in value in 3 simple steps</h2>
+        <p>Estimated value is inclusive of additional trade-in support</p>
+        <button onclick="showModelDropdown('desktops')">Choose your model</button>
+        <div id="modelDropdown-desktops" style="display: none;">
+            <select id="deviceModel-desktops" onchange="showConditionForm('desktops')">
+                <option value="">Select Model</option>
+                <option value="Lenovo"></option>
+                <option value="Dell"><Dell</option>
+                <option value="HP">HP</option>
+            </select>
+            <select id="deviceModel-desktops" onchange="showConditionForm('desktops')">
+                <option value="">Select Brand</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+            </select>
+        </div>
+        <div id="conditionForm-desktops" style="display: none;">
+            <h3>What is the condition of your product's body?</h3>
+            <input type="radio" name="bodyCondition-desktops" value="100"> Looks like new<br>
+            <input type="radio" name="bodyCondition-desktops" value="85"> Lightly used<br>
+            <input type="radio" name="bodyCondition-desktops" value="60"> Scratched or dents<br>
+            <input type="radio" name="bodyCondition-desktops" value="30"> Cracked<br>
+            
+            <h3>What is the condition of your screen?</h3>
+            <input type="radio" name="screenCondition-desktops" value="0"> Looks like new<br>
+            <input type="radio" name="screenCondition-desktops" value="10"> Lightly used<br>
+            <input type="radio" name="screenCondition-desktops" value="25"> Scratched<br>
+            <input type="radio" name="screenCondition-desktops" value="50"> Cracked<br>
+            
+            <h3>Does your product turn on and function normally?</h3>
+            <input type="radio" name="functionality-desktops" value="0"> Yes<br>
+            <input type="radio" name="functionality-desktops" value="50"> No<br>
+            
+            <button onclick="calculateTradeIn('desktops')">Calculate Trade-in</button>
+            <p id="tradeInValue-desktops"></p>
+
+            <!-- OKAY button to close the form after calculation -->
+        <button id="okayButton-desktops" style="display: none;" onclick="closePopup('desktopsPopup')">OKAY</button>
+        </div>
+    </div>
+
+    <div id="tabletsPopup" class="popup">
+        <span class="close" onclick="closePopup('tabletsPopup')">&times;</span>
+        <h2>Get your estimate trade-in value in 3 simple steps</h2>
+        <p>Estimated value is inclusive of additional trade-in support</p>
+        <button onclick="showModelDropdown('tablets')">Choose your model</button>
+        <div id="modelDropdown-tablets" style="display: none;">
+            <select id="deviceModel-tablets" onchange="showConditionForm('tablets')">
+                <option value="">Select Model</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+            </select>
+            <select id="deviceModel-tablets" onchange="showConditionForm('tablets')">
+                <option value="">Select Brand</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+            </select>
+        </div>
+        <div>
+            
+        </div>
+        <div id="conditionForm-tablets" style="display: none;">
+            <h3>What is the condition of your product's body?</h3>
+            <input type="radio" name="bodyCondition-tablets" value="100"> Looks like new<br>
+            <input type="radio" name="bodyCondition-tabletsPopup" value="85"> Lightly used<br>
+            <input type="radio" name="bodyCondition-tabletsPopup" value="60"> Scratched or dents<br>
+            <input type="radio" name="bodyCondition-tabletsPopup" value="30"> Cracked<br>
+            
+            <h3>What is the condition of your screen?</h3>
+            <input type="radio" name="screenCondition-tablets" value="0"> Looks like new<br>
+            <input type="radio" name="screenCondition-tablets" value="10"> Lightly used<br>
+            <input type="radio" name="screenCondition-tablets" value="25"> Scratched<br>
+            <input type="radio" name="screenCondition-tablets" value="50"> Cracked<br>
+            
+            <h3>Does your product turn on and function normally?</h3>
+            <input type="radio" name="functionality-tablets" value="0"> Yes<br>
+            <input type="radio" name="functionality-tablets" value="50"> No<br>
+            
+            <button onclick="calculateTradeIn('tablets')">Calculate Trade-in</button>
+            <p id="tradeInValue-tablets"></p>
+
+            <!-- OKAY button to close the form after calculation -->
+        <button id="okayButton-tablets" style="display: none;" onclick="closePopup('tabletsPopup')">OKAY</button>
+        </div>
+    </div>
+
+    <div id="smartphonesPopup" class="popup">
+        <span class="close" onclick="closePopup('smartphonesPopup')">&times;</span>
+        <h2>Get your estimate trade-in value in 3 simple steps</h2>
+        <p>Estimated value is inclusive of additional trade-in support</p>
+        <button onclick="showModelDropdown('smartphones')">Choose your model</button>
+        <div id="modelDropdown-smartphones" style="display: none;">
+            <select id="deviceModel-smartphones" onchange="showConditionForm('smartphones')">
+                <option value="">Select Model</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+            </select>
+            <select id="deviceModel-smartphones" onchange="showConditionForm('smartphones')">
+                <option value="">Select Brand</option>
+                <option value="Lenovo">Lenovo</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+            </select>
+        </div>
+        <div id="conditionForm-smartphones" style="display: none;">
+            <h3>What is the condition of your product's body?</h3>
+            <input type="radio" name="bodyCondition-smartphones" value="100"> Looks like new<br>
+            <input type="radio" name="bodyCondition-smartphones" value="85"> Lightly used<br>
+            <input type="radio" name="bodyCondition-smartphones" value="60"> Scratched or dents<br>
+            <input type="radio" name="bodyCondition-smartphones" value="30"> Cracked<br>
+            
+            <h3>What is the condition of your screen?</h3>
+            <input type="radio" name="screenCondition-smartphones" value="0"> Looks like new<br>
+            <input type="radio" name="screenCondition-smartphones" value="10"> Lightly used<br>
+            <input type="radio" name="screenCondition-smartphones" value="25"> Scratched<br>
+            <input type="radio" name="screenCondition-smartphones" value="50"> Cracked<br>
+            
+            <h3>Does your product turn on and function normally?</h3>
+            <input type="radio" name="functionality-smartphones" value="0"> Yes<br>
+            <input type="radio" name="functionality-smartphones" value="50"> No<br>
+            
+            <button onclick="calculateTradeIn('smartphones')">Calculate Trade-in</button>
+            <p id="tradeInValue-smartphones"></p>
+
+            <!-- OKAY button to close the form after calculation -->
+        <button id="okayButton-smartphones" style="display: none;" onclick="closePopup('smartphonesPopup')">OKAY</button>
+        </div>
+    </div>
+
+
+    <script>
+        function showPopup(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+    
+        function closePopup(id) {
+            document.getElementById(id).style.display = 'none';
+        }
+    
+        function showModelDropdown(type) {
+            document.getElementById(`modelDropdown-${type}`).style.display = 'block';
+        }
+    
+        function showConditionForm(type) {
+            document.getElementById(`conditionForm-${type}`).style.display = 'block';
+        }
+    
+        function calculateTradeIn(type) {
+            let baseValue = 1000;
+            
+            // Get values from the radio buttons for body, screen, and functionality conditions
+            let bodyCondition = document.querySelector(`input[name="bodyCondition-${type}"]:checked`)?.value || 100;
+            let screenCondition = document.querySelector(`input[name="screenCondition-${type}"]:checked`)?.value || 0;
+            let functionality = document.querySelector(`input[name="functionality-${type}"]:checked`)?.value || 0;
+    
+            // Calculate trade-in value considering body, screen, and functionality conditions
+            let tradeInValue = baseValue * (bodyCondition / 100) + screenCondition - functionality;
+            document.getElementById(`tradeInValue-${type}`).innerText = `Estimated Trade-In Value: $${tradeInValue.toFixed(2)}`;
+    
+        //     // Show the OKAY button after calculation
+        //     document.getElementById(`okayButton-${type}`).style.display = 'block';
+        // }
+
+        let okayButton = document.getElementById(`okayButton-${type}`);
+        if (okayButton) {
+            console.log(`Showing OKAY button for ${type}`);
+            okayButton.style.display = 'block';
+        } else {
+            console.error(`OKAY button not found for ${type}`);
+        }
+    }
+
+    </script>
+    
+</body>
+</html>

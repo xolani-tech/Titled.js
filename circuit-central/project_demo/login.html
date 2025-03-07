@@ -1,0 +1,161 @@
+C<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circuit Central Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            alert(`Logging in with Username: ${username}, Email: ${email}`);
+            
+            // Simulate authentication success (Redirect to dashboard)
+            window.location.href = "dashboard.html";
+        }
+
+        function loginWithGoogle() {
+            alert("Redirecting to Google login...");
+            window.location.href = "https://accounts.google.com/signin";
+        }
+
+        function loginWithFacebook() {
+            alert("Redirecting to Facebook login...");
+            window.location.href = "https://www.facebook.com/login";
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(to right, #0F0F0F, #1A1A2E);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #FFFFFF;
+        }
+        .login-container {
+            background: rgba(30, 30, 40, 0.9);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0px 5px 15px rgba(0, 255, 255, 0.2);
+            width: 400px;
+            text-align: center;
+        }
+        .login-box h2 {
+            color: #00FFFF;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+        .login-box input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            background: #222;
+            color: white;
+            outline: none;
+        }
+        .login-box input::placeholder {
+            color: #888;
+        }
+        .forgot-password a {
+            color: #00FFFF;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        .or-divider {
+            margin: 15px 0;
+            font-size: 14px;
+            color: #aaa;
+        }
+        .login-box button {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .login-btn {
+            background: #00FFFF;
+            color: #000;
+        }
+        .login-btn:hover {
+            background: #00CCCC;
+        }
+        .social-login button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .google {
+            background: #DB4437;
+            color: white;
+        }
+        .facebook {
+            background: #3B5998;
+            color: white;
+        }
+        .google:hover {
+            background: #C1351D;
+        }
+        .facebook:hover {
+            background: #2E4372;
+        }
+        .social-login img {
+            width: 20px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h2>Sign in to Circuit Central</h2>
+            <form onsubmit="handleLogin(event)">
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                <input type="email" id="email" name="email" placeholder="Email" required>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+                <div class="forgot-password">
+                    <a href="#">Forgot password?</a>
+                </div>
+                <button type="submit" class="login-btn">Sign In</button>
+            </form>
+            <div class="or-divider">OR</div>
+            <div class="social-login">
+                <button class="google" onclick="loginWithGoogle()">
+                    <img src="img/Googs.png" alt="Google Icon">
+ Sign in With Google
+                </button>
+                <button class="facebook" onclick="loginWithFacebook()">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png" alt="Facebook"> Sign in With Facebook
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+    

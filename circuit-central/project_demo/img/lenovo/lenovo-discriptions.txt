@@ -1,0 +1,39 @@
+lenovo_laptops
+
+ThinkBook 14 Gen 6(14,AMD)
+
+-14″ business powerhouse driven by AMD Ryzen™
+-Super responsive with dual-SSD storage & large memory
+-Ideal for data analysis, coding, & any detailed work
+
+Legion Slim 7i Gen 8 (16, Intel)
+
+-Agile 16″ performance laptop for gamers and creators
+-Slim design, big screen
+-Powered by a 13th Gen Intel® Core™ processor
+
+IdeaPad Slim 5 Gen 9 (16, AMD)
+
+-Performance-driven, achieves everyday tasks easily
+-Slim and light with smart tech functions
+-Plentiful storage, a work and play lover
+
+lenovo_desktops
+
+Lenovo ThinkCentre M75s Gen 5 (AMD) SFF
+
+-8.2L small form factor desktop with AI-accelerated productivity
+-Powered by AMD Ryzen™ PRO 8000 series processor
+-Connect up to 4 displays & collaborate with ease
+
+IdeaCentre AIO i Gen 9 (24, Intel)
+
+-Powered by up-to 13th Gen Intel® Core™ i7 processor
+-Optional touchscreen for ease of use
+-AI-enhanced webcam
+
+ThinkCentre M90t Gen 5 (Intel) Tower
+
+-Powered by up to Intel® Core™ Ultra processor featuring Intel vPro®
+-Top-tier performance & unwavering reliability
+-Comprehensive security solutions tailored for businesses
